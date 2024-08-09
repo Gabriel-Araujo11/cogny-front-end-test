@@ -31,7 +31,7 @@ export default function ProductsCard({ product, addToCart }) {
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
-      p={4}
+      p={5}
     >
       <Image
         src={product.image}
@@ -40,8 +40,10 @@ export default function ProductsCard({ product, addToCart }) {
         objectFit="cover"
         mb={4}
       />
-      <Text fontWeight="bold">{product.name}</Text>
-      <Text>R${product.price}</Text>
+      <Text>{product.name}</Text>
+      <Text fontWeight="bold" mb={3}>
+        R${product.price}
+      </Text>
       <Flex alignItems="center">
         <NumberInput
           value={quantity}
