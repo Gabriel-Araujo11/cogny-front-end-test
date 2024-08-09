@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Image,
@@ -8,13 +8,22 @@ import {
   NumberInputField,
   Flex,
 } from "@chakra-ui/react";
+import { quantitySchema } from "../validation/quatityValidation";
 
-export default function ProductsCard({
-  product,
-  addToCart,
-  quantity,
-  setQuantity,
-}) {
+export default function ProductsCard({ product, addToCart }) {
+  const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState("");
+
+  function handleAddToCart() {
+    const result = quantitySchema.safeParse(quantity);
+    if (!result.success) {
+      setError(result.error.errors[0].message);
+    } else {
+      setError("");
+      addToCart(product, quantity);
+    }
+  }
+
   return (
     <Box
       color="black"
@@ -60,7 +69,7 @@ export default function ProductsCard({
           borderLeftRadius={0}
           _hover={{ bg: "#c62c4a" }}
           right={1}
-          onClick={() => addToCart(product, quantity)}
+          onClick={handleAddToCart}
         >
           Adicionar ao carrinho
         </Button>
