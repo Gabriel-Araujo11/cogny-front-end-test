@@ -1,7 +1,13 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/cartContext";
 
 export default function Header() {
+  const { cartItems } = useContext(CartContext);
+
+  const totalQuantity = cartItems.reduce((acc, curr) => acc + curr.quantity, 0);
+
   return (
     <Box bg="black" color="white" p={4}>
       <Flex
@@ -25,7 +31,7 @@ export default function Header() {
               Meu carrinho
             </Text>
           </Link>
-          <Text>3 itens</Text>
+          <Text>{totalQuantity} itens</Text>
         </Box>
       </Flex>
     </Box>

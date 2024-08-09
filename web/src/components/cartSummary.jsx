@@ -9,7 +9,13 @@ export default function CartSummary({ total }) {
   return (
     <Box mt={4} p={4} borderWidth="1px" borderRadius="lg">
       <Text fontWeight="bold">Total: R${total}</Text>
-      <Button colorScheme="teal" mt={4} onClick={handleCheckout} bg="#F8375D">
+      <Button
+        colorScheme="teal"
+        mt={4}
+        onClick={handleCheckout}
+        _hover={{ bg: "#c62c4a" }}
+        bg="#F8375D"
+      >
         FINALIZAR PEDIDO
       </Button>
     </Box>
