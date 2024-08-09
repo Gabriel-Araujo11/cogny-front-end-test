@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Text, Image } from "@chakra-ui/react";
 
-const CartItem = ({ item }) => {
+export default function CartItem({ item }) {
   return (
     <Box
       display="flex"
@@ -18,12 +18,10 @@ const CartItem = ({ item }) => {
         objectFit="cover"
       />
       <Box ml={4}>
-        <Text fontWeight="bold">"{item.product.name}"</Text>
-        <Text>Quantidade: "{item.quantity}"</Text>
-        <Text>Preço: $"{item.product.price * item.quantity}"</Text>
+        <Text fontWeight="bold">{item.product.name}</Text>
+        <Text>Quantidade: {item.quantity}</Text>
+        <Text>Preço: ${item.product.price * item.quantity}</Text>
       </Box>
     </Box>
   );
-};
-
-export default CartItem;
+}
