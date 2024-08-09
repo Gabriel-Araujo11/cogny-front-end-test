@@ -7,7 +7,7 @@ export default function Products() {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <Box p={4}>
+    <Box p={4} maxWidth="1000px" margin="0 auto">
       <ProductList addToCart={addToCart} />
     </Box>
   );

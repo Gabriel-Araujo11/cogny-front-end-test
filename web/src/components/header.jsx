@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <Box bg="black" color="white" p={4}>
-      <Flex justifyContent="space-between" alignItems="center">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        maxWidth="970px"
+        margin="0 auto"
+        marginTop={5}
+      >
         <Link to="/">
           <Flex alignItems="center">
             <img src="/cognyshoeslogo.svg" alt="Logo" style={{ width: 50 }} />
