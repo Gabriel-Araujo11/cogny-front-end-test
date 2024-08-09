@@ -9,11 +9,11 @@ import theme from "./theme/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChakraProvider theme={theme}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <ChakraProvider theme={theme}>
       <App />
-    </React.StrictMode>
-  </ChakraProvider>
+    </ChakraProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

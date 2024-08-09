@@ -1,23 +1,22 @@
-import "@fontsource/roboto";
+import React from "react";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Products from "./pages/products";
 import Header from "./components/header";
+import Cart from "./pages/cart";
+import { CartProvider } from "./context/cartContext";
 
 function App() {
   return (
-    <div>
-      <header>
+    <BrowserRouter>
+      <CartProvider>
         <Header />
-      </header>
-      <h1
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
-        Lets'go, Cognyers 🚀
-      </h1>
-    </div>
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 
