@@ -20,7 +20,7 @@ const products = [
 export default function ProductList({ addToCart }) {
   const [quantity, setQuantity] = useState(1);
   return (
-    <SimpleGrid columns={3} spacing={10}>
+    <SimpleGrid columns={3} spacing={5}>
       {products.map((product) => {
         return (
           <ProductsCard

@@ -6,9 +6,7 @@ import {
   Button,
   NumberInput,
   NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
+  Flex,
 } from "@chakra-ui/react";
 
 export default function ProductsCard({
@@ -35,29 +33,38 @@ export default function ProductsCard({
       />
       <Text fontWeight="bold">{product.name}</Text>
       <Text>R${product.price}</Text>
-      <NumberInput
-        bg="#c62c4a"
-        value={quantity}
-        onChange={(value) => setQuantity(value)}
-        min={1}
-        max={10}
-        mb={4}
-      >
-        <NumberInputField />
-        <NumberInputStepper>
-          <NumberIncrementStepper />
-          <NumberDecrementStepper />
-        </NumberInputStepper>
-      </NumberInput>
-      <Button
-        bg="#F8375D"
-        color="white"
-        colorScheme="teal"
-        onClick={() => addToCart(product, quantity)}
-        _hover={{ bg: "#c62c4a" }}
-      >
-        Adicionar ao carrinho
-      </Button>
+      <Flex alignItems="center">
+        <NumberInput
+          value={quantity}
+          onChange={(value) => setQuantity(value)}
+          min={1}
+          max={10}
+          width="53px"
+          height="42px"
+          borderRightRadius={0}
+          bg="#c62c4a"
+          borderRadius={5}
+        >
+          <NumberInputField
+            textAlign="center"
+            color="white"
+            paddingX={2}
+            borderColor="#c62c4a"
+          />
+        </NumberInput>
+
+        <Button
+          bg="#F8375D"
+          color="white"
+          height="42px"
+          borderLeftRadius={0}
+          _hover={{ bg: "#c62c4a" }}
+          right={1}
+          onClick={() => addToCart(product, quantity)}
+        >
+          Adicionar ao carrinho
+        </Button>
+      </Flex>
     </Box>
   );
 }
