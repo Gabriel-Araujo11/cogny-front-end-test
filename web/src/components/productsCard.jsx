@@ -1,27 +1,12 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Image,
-  Text,
-  Button,
-  NumberInput,
-  NumberInputField,
-  Flex,
-} from "@chakra-ui/react";
-import { quantitySchema } from "../validation/quatityValidation";
+import { Box, Image, Text, Button, Flex, Select } from "@chakra-ui/react";
 
 export default function ProductsCard({ product, addToCart }) {
   const [quantity, setQuantity] = useState(1);
-  const [error, setError] = useState("");
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   function handleAddToCart() {
-    const result = quantitySchema.safeParse(quantity);
-    if (!result.success) {
-      setError(result.error.errors[0].message);
-    } else {
-      setError("");
-      addToCart(product, quantity);
-    }
+    addToCart(product, quantity);
   }
 
   return (
@@ -45,24 +30,22 @@ export default function ProductsCard({ product, addToCart }) {
         R${product.price}
       </Text>
       <Flex alignItems="center">
-        <NumberInput
+        <Select
           value={quantity}
-          onChange={(value) => setQuantity(value)}
-          min={1}
-          max={10}
-          width="53px"
-          height="42px"
-          borderRightRadius={0}
+          onChange={(e) => setQuantity(parseInt(e.target.value))}
+          width="80px"
+          height="44px"
           bg="#c62c4a"
+          color="white"
           borderRadius={5}
+          borderRightRadius={0}
         >
-          <NumberInputField
-            textAlign="center"
-            color="white"
-            paddingX={2}
-            borderColor="#c62c4a"
-          />
-        </NumberInput>
+          {numbers.map((number) => (
+            <option key={number} value={number} style={{ color: "black" }}>
+              {number}
+            </option>
+          ))}
+        </Select>
 
         <Button
           bg="#F8375D"
@@ -70,7 +53,7 @@ export default function ProductsCard({ product, addToCart }) {
           height="42px"
           borderLeftRadius={0}
           _hover={{ bg: "#c62c4a" }}
-          right={1}
+          right={8}
           onClick={handleAddToCart}
         >
           Adicionar ao carrinho

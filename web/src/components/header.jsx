@@ -19,10 +19,14 @@ export default function Header() {
       >
         <Link to="/">
           <Flex alignItems="center">
-            <img src="/cognyshoeslogo.svg" alt="Logo" style={{ width: 50 }} />
-            <Text fontSize="2xl" fontWeight="bold" ml={2}>
+            <Text fontSize="2xl" fontWeight="bold">
               COGNYSHOES
             </Text>
+            <img
+              src="/cognyshoeslogo.svg"
+              alt="Logo"
+              style={{ width: 50, marginLeft: 10, marginBottom: 20 }}
+            />
           </Flex>
         </Link>
         <Box textAlign="right">
