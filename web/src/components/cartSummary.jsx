@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Text, Flex } from "@chakra-ui/react";
 import { CartContext } from "../context/cartContext";
 import AlertMessage from "../utils/Alert";
 
@@ -34,16 +34,24 @@ export default function CartSummary({ total }) {
           onClose={() => setAlert(null)}
         />
       )}
-      <Text fontWeight="bold">Total: R${total}</Text>
-      <Button
-        colorScheme="teal"
-        mt={4}
-        onClick={handleCheckout}
-        _hover={{ bg: "#c62c4a" }}
-        bg="#F8375D"
-      >
-        FINALIZAR PEDIDO
-      </Button>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Button
+          colorScheme="teal"
+          onClick={handleCheckout}
+          _hover={{ bg: "#c62c4a" }}
+          bg="#F8375D"
+        >
+          FINALIZAR PEDIDO
+        </Button>
+        <Flex alignItems="center">
+          <Text color="gray.500" mr={2} fontWeight="bold">
+            TOTAL:
+          </Text>
+          <Text fontWeight="bold" color="black" fontSize="30px" mb={4} mt={2}>
+            R$ {total}
+          </Text>
+        </Flex>
+      </Flex>
     </Box>
   );
 }
