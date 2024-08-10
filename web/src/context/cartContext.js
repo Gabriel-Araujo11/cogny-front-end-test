@@ -20,8 +20,12 @@ export function CartProvider({ children }) {
     });
   }
 
+  function resetCart() {
+    setCartItems([]);
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, resetCart }}>
       {children}
     </CartContext.Provider>
   );

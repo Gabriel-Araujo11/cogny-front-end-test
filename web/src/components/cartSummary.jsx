@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Button, Text } from "@chakra-ui/react";
+import { CartContext } from "../context/cartContext";
 
 export default function CartSummary({ total }) {
+  const { resetCart } = useContext(CartContext);
+
   const handleCheckout = () => {
     alert("Pedido finalizado!");
+    resetCart();
   };
 
   return (
