@@ -22,7 +22,7 @@ export default function ProductsCard({ product, addToCart }) {
         src={product.imageUrl}
         alt={product.name}
         boxSize="300px"
-        objectFit="cover"
+        objectFit="contain"
         width="auto"
         mb={4}
       />

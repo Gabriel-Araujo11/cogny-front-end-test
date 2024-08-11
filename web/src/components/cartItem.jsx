@@ -22,7 +22,7 @@ export default function CartItem({ item }) {
             src={item.product.imageUrl}
             alt={item.product.name}
             boxSize="100px"
-            objectFit="cover"
+            objectFit="contain"
           />
           <Box ml={4}>
             <Text fontWeight="bold" fontSize="14px" textAlign="initial">
