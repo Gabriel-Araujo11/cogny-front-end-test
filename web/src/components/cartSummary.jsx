@@ -3,6 +3,7 @@ import { Box, Button, Text, Flex } from "@chakra-ui/react";
 import { CartContext } from "../context/cartContext";
 import AlertMessage from "../utils/Alert";
 import { Link } from "react-router-dom";
+import CartList from "./cartList";
 
 export default function CartSummary({ total }) {
   const { resetCart } = useContext(CartContext);
@@ -35,9 +36,9 @@ export default function CartSummary({ total }) {
           onClose={() => setAlert(null)}
         />
       )}
-      {!total ? (
+      {total === 0 ? (
         <Box>
-          <Text mb={5}>O Carrinho está vazio. </Text>
+          <Text mb={5}>O Carrinho está vazio.</Text>
           <Link to="/">
             <Button
               colorScheme="teal"
@@ -50,24 +51,33 @@ export default function CartSummary({ total }) {
           </Link>
         </Box>
       ) : (
-        <Flex justifyContent="space-between" alignItems="center">
-          <Button
-            colorScheme="teal"
-            onClick={handleCheckout}
-            _hover={{ bg: "#c62c4a" }}
-            bg="#F8375D"
-          >
-            FINALIZAR PEDIDO
-          </Button>
-          <Flex alignItems="center">
-            <Text color="gray.500" mr={2} fontWeight="bold">
-              TOTAL:
-            </Text>
-            <Text fontWeight="bold" color="black" fontSize="30px" mb={4} mt={2}>
-              R$ {total}
-            </Text>
+        <>
+          <CartList />
+          <Flex justifyContent="space-between" alignItems="center" mt={4}>
+            <Button
+              colorScheme="teal"
+              onClick={handleCheckout}
+              _hover={{ bg: "#c62c4a" }}
+              bg="#F8375D"
+            >
+              FINALIZAR PEDIDO
+            </Button>
+            <Flex alignItems="center">
+              <Text color="gray.500" mr={2} fontSize="18px" fontWeight="bold">
+                TOTAL:
+              </Text>
+              <Text
+                fontWeight="bold"
+                color="black"
+                fontSize="30px"
+                mb={4}
+                mt={2}
+              >
+                R$ {total}
+              </Text>
+            </Flex>
           </Flex>
-        </Flex>
+        </>
       )}
     </Box>
   );

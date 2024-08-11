@@ -19,10 +19,11 @@ export default function ProductsCard({ product, addToCart }) {
       p={5}
     >
       <Image
-        src={product.image}
+        src={product.imageUrl}
         alt={product.name}
-        boxSize="150px"
+        boxSize="300px"
         objectFit="cover"
+        width="auto"
         mb={4}
       />
       <Text>{product.name}</Text>
