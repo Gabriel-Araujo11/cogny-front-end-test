@@ -73,7 +73,7 @@ export default function CartSummary({ total }) {
                 mb={4}
                 mt={2}
               >
-                R$ {total}
+                R$ {(total / 100).toFixed(2).replace(".", ",")}
               </Text>
             </Flex>
           </Flex>

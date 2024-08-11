@@ -28,7 +28,7 @@ export default function ProductsCard({ product, addToCart }) {
       />
       <Text>{product.name}</Text>
       <Text fontWeight="bold" mb={3}>
-        R${product.price}
+        R${(product.price / 100).toFixed(2).replace(".", ",")}
       </Text>
       <Flex alignItems="center">
         <Select

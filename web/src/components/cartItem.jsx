@@ -29,7 +29,7 @@ export default function CartItem({ item }) {
               {item.product.name}
             </Text>
             <Text fontWeight="bold" fontSize="18px" textAlign="initial">
-              R${item.product.price}
+              R${(item.product.price / 100).toFixed(2).replace(".", ",")}
             </Text>
           </Box>
         </GridItem>
@@ -48,7 +48,10 @@ export default function CartItem({ item }) {
         </Select>
 
         <Text fontWeight="bold" fontSize="18px">
-          R${item.product.price * item.quantity}
+          R$
+          {((item.product.price * item.quantity) / 100)
+            .toFixed(2)
+            .replace(".", ",")}
         </Text>
       </Grid>
     </Box>
