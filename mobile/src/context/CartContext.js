@@ -7,7 +7,6 @@ export function CartProvider({ children }) {
 
   function addToCart() {
     setCartItemsCount(cartItemsCount + 1);
-    console.log("log", cartItemsCount);
   }
 
   function resetCart() {
