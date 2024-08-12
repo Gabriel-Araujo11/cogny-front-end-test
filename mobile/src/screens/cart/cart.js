@@ -5,7 +5,7 @@ import Header from "../../components/Header/Header";
 
 export default function Cart() {
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: "black" }}>
       <Header />
       <CartItem />
     </View>

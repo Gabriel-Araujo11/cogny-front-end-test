@@ -3,11 +3,11 @@
     "name": "cognyshoes",
     "slug": "cognyshoes-mobile",
     "version": "1.0.0",
-    "icon": "./assets/cognyshoeslogo.svg",
+    "icon": "./assets/cognyshoeslogo.png",
     "splash": {
-      "image": "./assets/cognyshoeslogo.svg",
+      "image": "./assets/cognyshoeslogo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
