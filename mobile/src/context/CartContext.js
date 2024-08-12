@@ -2,16 +2,20 @@ import React, { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-  const [cartItemsCount, setCartItemsCount] = useState(0);
+export function CartProvider({ children }) {
+  const [cartItemsCount, setCartItemsCount] = useState("");
 
-  const addToCart = () => {
+  function addToCart() {
     setCartItemsCount(cartItemsCount + 1);
-  };
+  }
+
+  function resetCart() {
+    setCartItemsCount("");
+  }
 
   return (
-    <CartContext.Provider value={{ cartItemsCount, addToCart }}>
+    <CartContext.Provider value={{ cartItemsCount, addToCart, resetCart }}>
       {children}
     </CartContext.Provider>
   );
-};
+}

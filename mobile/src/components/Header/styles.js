@@ -28,4 +28,17 @@ export const styles = StyleSheet.create({
   cartContainer: {
     marginRight: 5,
   },
+  cartBadge: {
+    backgroundColor: "#F8375D",
+    width: 16,
+    height: 16,
+    borderRadius: 10,
+    bottom: 28,
+    left: 10,
+    alignItems: "center",
+  },
+  cartBadgeText: {
+    color: "white",
+    fontSize: 12,
+  },
 });

@@ -1,10 +1,20 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useContext } from "react";
+import { View, Button, Text } from "react-native";
+import { CartContext } from "../../context/CartContext";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CartItem() {
+  const { resetCart } = useContext(CartContext);
+  const navigation = useNavigation();
+
+  function handleBackProductCard() {
+    navigation.navigate("Product");
+    resetCart();
+  }
+
   return (
     <View>
-      <Text>Itens no carrinho de compras</Text>
+      <Button title="Voltar" onPress={handleBackProductCard} />
     </View>
   );
 }

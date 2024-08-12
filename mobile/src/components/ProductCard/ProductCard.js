@@ -1,18 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, Button } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { CartContext } from "../../context/CartContext";
 
 export default function ProductCard() {
-  const navigation = useNavigation();
-
-  const handleAddToCart = () => {
-    navigation.navigate("Cart");
-  };
+  const { addToCart } = useContext(CartContext);
 
   return (
     <View>
       <Text> Card com os produtos</Text>
-      <Button title="Adicionar ao carrinho" onPress={handleAddToCart} />
+      <Button title="Adicionar ao carrinho" onPress={addToCart} />
     </View>
   );
 }
