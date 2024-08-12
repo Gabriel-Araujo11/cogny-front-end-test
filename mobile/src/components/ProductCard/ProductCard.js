@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, TextInput } from "react-native";
+import { View, Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function ProductCard() {
@@ -12,7 +12,6 @@ export default function ProductCard() {
   return (
     <View>
       <Text> Card com os produtos</Text>
-      <TextInput keyboardType="numeric" />
       <Button title="Adicionar ao carrinho" onPress={handleAddToCart} />
     </View>
   );

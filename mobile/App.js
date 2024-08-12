@@ -8,8 +8,16 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <Stack.Navigator initialRouteName="Product">
-      <Stack.Screen name="Product" component={Product} />
-      <Stack.Screen name="Cart" component={Cart} />
+      <Stack.Screen
+        name="Product"
+        component={Product}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Cart"
+        component={Cart}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
