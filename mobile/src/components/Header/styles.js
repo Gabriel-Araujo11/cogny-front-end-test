@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
   },
   cartBadge: {
     backgroundColor: "#F8375D",
-    width: 16,
     height: 16,
     borderRadius: 10,
     bottom: 28,
