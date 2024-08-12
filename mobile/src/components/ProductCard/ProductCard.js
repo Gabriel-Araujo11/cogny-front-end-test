@@ -9,7 +9,7 @@ export default function ProductCard() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ color: "white" }}> Card com os produtos</Text>
+      <Text style={styles.text}> Card com os produtos</Text>
       <ProductList />
       <Button title="Adicionar ao carrinho" onPress={addToCart} />
     </View>

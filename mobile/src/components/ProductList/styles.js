@@ -6,4 +6,7 @@ export const styles = StyleSheet.create({
     marginBottom: 13,
     alignItems: "center",
   },
+  text: {
+    color: "white",
+  },
 });

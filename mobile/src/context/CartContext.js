@@ -3,14 +3,14 @@ import React, { createContext, useState } from "react";
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cartItemsCount, setCartItemsCount] = useState();
+  const [cartItemsCount, setCartItemsCount] = useState(0);
 
   function addToCart() {
     setCartItemsCount(cartItemsCount + 1);
   }
 
   function resetCart() {
-    setCartItemsCount("");
+    setCartItemsCount();
   }
 
   return (

@@ -4,7 +4,7 @@ import { styles } from "./styles";
 export default function ProductList() {
   return (
     <View style={styles.container}>
-      <Text style={{ color: "white" }}>Lista de Produtos</Text>
+      <Text style={styles.text}>Lista de Produtos</Text>
     </View>
   );
 }
