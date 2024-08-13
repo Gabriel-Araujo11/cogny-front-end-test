@@ -1,47 +1,66 @@
-import React, { useContext, useState } from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
-// import { CartContext } from "../../context/CartContext";
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Modal,
+  FlatList,
+} from "react-native";
 import ProductList from "../ProductList/ProductList";
 import { styles } from "./styles";
-import { Picker } from "@react-native-picker/picker";
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export default function ProductCard() {
   const [quantity, setQuantity] = useState(1);
-  // const { addToCart } = useContext(CartContext);
-
-  // function handleAddToCart() {
-  //   addToCart(product, quantity);
-  // }
+  const [isPickerVisible, setPickerVisible] = useState(false);
 
   return (
     <View style={styles.container}>
       <Image
         source={{
-          uri: "https://m.media-amazon.com/images/I/61Ru03cU+-L._AC_SY300_SX300_.jpg",
+          uri: "https://m.media-amazon.com/images/I/61AYC0iaW9L._AC_SX679_.jpg",
         }}
         overflow="hidden"
         style={styles.image}
       />
-      <Text style={styles.productName}>Product.name</Text>
-      <Text style={styles.productPrice}>Product.price</Text>
+      <Text style={styles.productName}>Whey Protein Optimum Nutrition</Text>
+      <Text style={styles.productPrice}>R$ 179,90</Text>
 
       <View style={styles.flexContainer}>
-        <Picker
-          selectValue={quantity}
-          onValueChange={(item) => setQuantity(item)}
-          style={styles.picker}
+        <TouchableOpacity
+          style={styles.quantityButton}
+          onPress={() => setPickerVisible(true)}
         >
-          {numbers.map((number) => (
-            <Picker.Item key={number} label={`${number}`} value={number} />
-          ))}
-        </Picker>
-
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Adicionar</Text>
+          <Text style={styles.quantityText}>{quantity}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.addButton}>
+          <Text style={styles.buttonText}>ADICIONAR</Text>
         </TouchableOpacity>
       </View>
+
+      <Modal
+        visible={isPickerVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setPickerVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <FlatList
+            data={numbers}
+            keyExtractor={(item) => item.toString()}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={styles.modalItem}
+                onPress={() => handleSelectQuantity(item)}
+              >
+                <Text style={styles.modalText}>{item}</Text>
+              </TouchableOpacity>
+            )}
+          />
+        </View>
+      </Modal>
       <ProductList />
     </View>
   );

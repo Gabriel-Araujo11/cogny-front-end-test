@@ -8,8 +8,6 @@ export default function Products() {
     <View style={{ flex: 1, backgroundColor: "black" }}>
       <Header />
       <ScrollView>
-        {/* TEST PADDING */}
-        <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />

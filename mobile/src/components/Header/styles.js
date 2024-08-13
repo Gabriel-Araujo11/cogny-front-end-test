@@ -5,8 +5,8 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 16,
     backgroundColor: "black",
-    top: 30,
-    paddingBottom: 50,
+    top: 40,
+    paddingBottom: 60,
   },
   headerContent: {
     flexDirection: "row",
