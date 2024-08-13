@@ -31,13 +31,13 @@ export default function ProductCard() {
     <View style={styles.container}>
       <Image
         source={{
-          uri: "https://m.media-amazon.com/images/I/61AYC0iaW9L._AC_SX679_.jpg",
+          uri: "product.imageUrl",
         }}
         overflow="hidden"
         style={styles.image}
       />
-      <Text style={styles.productName}>Whey Protein Optimum Nutrition</Text>
-      <Text style={styles.productPrice}>R$ 179,90</Text>
+      <Text style={styles.productName}>product.name</Text>
+      <Text style={styles.productPrice}>product.price</Text>
 
       <View style={styles.flexContainer}>
         <TouchableOpacity

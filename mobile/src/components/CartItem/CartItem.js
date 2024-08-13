@@ -8,7 +8,7 @@ export default function CartItem() {
       <View style={styles.itemContainer}>
         <Image
           source={{
-            uri: "https://m.media-amazon.com/images/I/61AYC0iaW9L._AC_SX679_.jpg",
+            uri: "product.imageUrl",
           }}
           style={styles.image}
           resizeMode="contain"
