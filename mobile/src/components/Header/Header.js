@@ -21,7 +21,7 @@ export default function Header() {
           <View style={styles.logoContainer}>
             <Text style={styles.logoText}>COGNYSHOES</Text>
             <Image
-              source={require("../../assets/cognyshoeslogo.png")}
+              source={require("../../assets/cognyshoes_logo.png")}
               style={styles.logoImage}
             />
           </View>

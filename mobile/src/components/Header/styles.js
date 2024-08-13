@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: "black",
     top: 30,
+    paddingBottom: 50,
   },
   headerContent: {
     flexDirection: "row",
@@ -14,6 +15,7 @@ export const styles = StyleSheet.create({
   },
   logoContainer: {
     flexDirection: "row",
+    marginLeft: 4,
   },
   logoText: {
     fontSize: 24,
@@ -26,7 +28,7 @@ export const styles = StyleSheet.create({
     height: 24,
   },
   cartContainer: {
-    marginRight: 5,
+    marginRight: 15,
   },
   cartBadge: {
     backgroundColor: "#F8375D",

@@ -3,9 +3,9 @@
     "name": "cognyshoes",
     "slug": "cognyshoes-mobile",
     "version": "1.0.0",
-    "icon": "./assets/cognyshoeslogo.png",
+    "icon": "src/assets/cognyshoes_logo.png",
     "splash": {
-      "image": "./assets/cognyshoeslogo.png",
+      "image": "src/assets/cognyshoessplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
