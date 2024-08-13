@@ -13,11 +13,15 @@ export default function Header() {
     navigation.navigate("Cart");
   }
 
+  function handleToProducts() {
+    navigation.navigate("Products");
+  }
+
   return (
     <View style={styles.headerContainer}>
       <StatusBar backgroundColor="black" />
       <View style={styles.headerContent}>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+        <TouchableOpacity onPress={handleToProducts}>
           <View style={styles.logoContainer}>
             <Text style={styles.logoText}>COGNYSHOES</Text>
             <Image

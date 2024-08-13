@@ -36,7 +36,7 @@ export default function ProductCard() {
         overflow="hidden"
         style={styles.image}
       />
-      <Text style={styles.productName}>Whey Protein Optimum Nutritioo</Text>
+      <Text style={styles.productName}>Whey Protein Optimum Nutrition</Text>
       <Text style={styles.productPrice}>R$ 179,90</Text>
 
       <View style={styles.flexContainer}>

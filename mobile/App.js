@@ -9,9 +9,9 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <CartProvider>
-      <Stack.Navigator initialRouteName="Product">
+      <Stack.Navigator initialRouteName="Products">
         <Stack.Screen
-          name="Product"
+          name="Products"
           component={Product}
           options={{ headerShown: false }}
         />

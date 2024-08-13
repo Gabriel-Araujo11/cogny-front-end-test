@@ -1,22 +1,25 @@
-import React, { useContext } from "react";
-import { View, Button, Text } from "react-native";
-import { CartContext } from "../../context/CartContext";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { styles } from "./styles";
 
 export default function CartItem() {
-  const { resetCart } = useContext(CartContext);
-  const navigation = useNavigation();
-
-  function handleBackProductCard() {
-    navigation.navigate("Product");
-    resetCart();
-  }
-
   return (
     <View style={styles.container}>
-      <Text style={{ color: "white" }}> Itens no carrinho </Text>
-      <Button title="Voltar" onPress={handleBackProductCard} />
+      <View style={styles.itemContainer}>
+        <Image
+          source={{
+            uri: "https://m.media-amazon.com/images/I/61AYC0iaW9L._AC_SX679_.jpg",
+          }}
+          style={styles.image}
+          resizeMode="contain"
+        />
+        <View style={styles.textContainer}>
+          <Text style={styles.productName}>item.product.name</Text>
+          <Text style={styles.productPrice}>R$ preço</Text>
+        </View>
+      </View>
+
+      <Text style={styles.totalPrice}>R$ Preço somado</Text>
     </View>
   );
 }

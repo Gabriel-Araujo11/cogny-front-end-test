@@ -1,13 +1,22 @@
 import React from "react";
-import { View } from "react-native";
-import CartItem from "../../components/CartItem/CartItem";
+import { View, ScrollView } from "react-native";
 import Header from "../../components/Header/Header";
+import CartList from "../../components/CartList/CartList";
 
 export default function Cart() {
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
       <Header />
-      <CartItem />
+      <ScrollView>
+        {/*TEST DEVELOPMENT*/}
+        <CartList />
+        <CartList />
+        <CartList />
+        <CartList />
+        <CartList />
+        <CartList />
+        <CartList />
+      </ScrollView>
     </View>
   );
 }
