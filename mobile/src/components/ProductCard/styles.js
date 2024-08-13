@@ -64,15 +64,24 @@ export const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+  },
+  modalView: {
+    maxWidth: 100,
+    backgroundColor: "#F8375D",
+    maxHeight: 420,
+    borderRadius: 10,
+    right: 120,
   },
   modalItem: {
-    backgroundColor: "#fff",
-    padding: 20,
-    marginVertical: 5,
+    padding: 10,
     borderRadius: 5,
     alignItems: "center",
+  },
+  modalText: {
+    fontSize: 16,
+    color: "white",
   },
 });

@@ -58,18 +58,20 @@ export default function ProductCard() {
         onRequestClose={() => setPickerVisible(false)}
       >
         <View style={styles.modalContainer}>
-          <FlatList
-            data={numbers}
-            keyExtractor={(item) => item.toString()}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                style={styles.modalItem}
-                onPress={() => handleSelectQuantity(item)}
-              >
-                <Text style={styles.modalText}>{item}</Text>
-              </TouchableOpacity>
-            )}
-          />
+          <View style={styles.modalView}>
+            <FlatList
+              data={numbers}
+              keyExtractor={(item) => item.toString()}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  style={styles.modalItem}
+                  onPress={() => handleSelectQuantity(item)}
+                >
+                  <Text style={styles.modalText}>{item}</Text>
+                </TouchableOpacity>
+              )}
+            />
+          </View>
         </View>
       </Modal>
       <ProductList />
