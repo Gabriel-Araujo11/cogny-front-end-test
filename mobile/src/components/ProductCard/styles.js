@@ -62,4 +62,17 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     right: 20,
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalItem: {
+    backgroundColor: "#fff",
+    padding: 20,
+    marginVertical: 5,
+    borderRadius: 5,
+    alignItems: "center",
+  },
 });
