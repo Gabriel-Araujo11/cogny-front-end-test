@@ -3,10 +3,10 @@ import React, { createContext, useState } from "react";
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cartItemsCount, setCartItemsCount] = useState(0);
+  const [cartItemsCount, setCartItemsCount] = useState([]);
 
-  function addToCart(quantity) {
-    setCartItemsCount((prevCount) => prevCount + quantity);
+  function addToCart(product) {
+    setCartItemsCount((prevCount) => [...prevCount, product]);
   }
 
   function resetCart() {

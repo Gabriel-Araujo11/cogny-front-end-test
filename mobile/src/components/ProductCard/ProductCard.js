@@ -11,7 +11,7 @@ export default function ProductCard({ imageUrl, name, price }) {
   function handleAddToCart() {
     const numericQuantity = parseInt(quantity);
     if (numericQuantity >= 1 && numericQuantity <= 10) {
-      addToCart(numericQuantity);
+      addToCart({ imageUrl, name, price, quantity: numericQuantity });
     }
   }
 
