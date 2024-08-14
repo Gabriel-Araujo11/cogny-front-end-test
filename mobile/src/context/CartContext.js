@@ -5,12 +5,12 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItemsCount, setCartItemsCount] = useState(0);
 
-  function addToCart() {
-    setCartItemsCount(cartItemsCount + 1);
+  function addToCart(quantity) {
+    setCartItemsCount((prevCount) => prevCount + quantity);
   }
 
   function resetCart() {
-    setCartItemsCount();
+    setCartItemsCount(0);
   }
 
   return (

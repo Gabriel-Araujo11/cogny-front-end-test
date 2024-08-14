@@ -8,6 +8,7 @@ import { CartContext } from "../../context/CartContext";
 export default function Header() {
   const navigation = useNavigation();
   const { cartItemsCount } = useContext(CartContext);
+  const { resetCart } = useContext(CartContext);
 
   function handleToCart() {
     navigation.navigate("Cart");
@@ -15,6 +16,7 @@ export default function Header() {
 
   function handleToProducts() {
     navigation.navigate("Products");
+    resetCart();
   }
 
   return (
