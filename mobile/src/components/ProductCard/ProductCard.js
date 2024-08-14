@@ -37,7 +37,9 @@ export default function ProductCard({ id, imageUrl, name, price }) {
         style={styles.image}
       />
       <Text style={styles.productName}>{name}</Text>
-      <Text style={styles.productPrice}>{price}</Text>
+      <Text style={styles.productPrice}>
+        R$ {(price / 100).toFixed(2).replace(".", ",")}
+      </Text>
 
       <View style={styles.flexContainer}>
         <TouchableOpacity style={styles.quantityButton}>

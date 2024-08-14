@@ -19,12 +19,17 @@ export default function CartItem() {
               />
               <View style={styles.textContainer}>
                 <Text style={styles.productName}>{item.product.name}</Text>
-                <Text style={styles.productPrice}>R${item.product.price}</Text>
+                <Text style={styles.productPrice}>
+                  R${(item.product.price / 100).toFixed(2).replace(".", ",")}
+                </Text>
               </View>
             </View>
             <View style={styles.totalPriceContainer}>
               <Text style={styles.totalPrice}>
-                R$ {item.product.price * item.quantity}
+                R${" "}
+                {((item.product.price * item.quantity) / 100)
+                  .toFixed(2)
+                  .replace(".", ",")}
               </Text>
               <Text style={styles.totalQuantity}>{item.quantity}</Text>
             </View>

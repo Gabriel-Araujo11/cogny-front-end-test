@@ -10,20 +10,31 @@ export const styles = StyleSheet.create({
     borderColor: "#ddd",
     backgroundColor: "white",
   },
+  emptyCartContainer: {
+    padding: 15,
+  },
   emptyCartText: {
     marginBottom: 20,
     fontSize: 16,
   },
   footer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     marginTop: 16,
+    position: "relative",
   },
   button: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    width: "90%",
+    paddingVertical: 12,
     borderRadius: 8,
+    backgroundColor: "#FF3B60",
+    marginBottom: 20,
+  },
+  buttonText: {
+    textAlign: "center",
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 16,
   },
   backButton: {
     backgroundColor: "#F8375D",
@@ -38,11 +49,11 @@ export const styles = StyleSheet.create({
   },
   totalContainer: {
     alignItems: "center",
-    flexDirection: "row",
+    flexDirection: "column",
+    marginBottom: 16,
   },
   totalLabel: {
     color: "gray",
-    marginRight: 8,
     fontSize: 18,
     fontWeight: "bold",
   },
@@ -50,7 +61,6 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "black",
     fontSize: 30,
-    marginBottom: 8,
     marginTop: 4,
   },
 });

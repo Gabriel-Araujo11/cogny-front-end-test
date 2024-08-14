@@ -29,7 +29,7 @@ export default function CartSummary() {
   return (
     <View style={styles.container}>
       {cartItems.length === 0 ? (
-        <View>
+        <View style={styles.emptyCartContainer}>
           <Text style={styles.emptyCartText}>O Carrinho está vazio.</Text>
           <TouchableOpacity onPress={() => navigation.navigate("Products")}>
             <View style={[styles.button, styles.backButton]}>
@@ -41,15 +41,15 @@ export default function CartSummary() {
         <>
           <CartItem />
           <View style={styles.footer}>
-            <TouchableOpacity onPress={handleCheckout}>
-              <View style={[styles.button, styles.checkoutButton]}>
-                <Text style={styles.buttonText}>FINALIZAR PEDIDO</Text>
-              </View>
-            </TouchableOpacity>
             <View style={styles.totalContainer}>
               <Text style={styles.totalLabel}>TOTAL:</Text>
-              <Text style={styles.totalValue}>R$ {total.toFixed(2)}</Text>
+              <Text style={styles.totalValue}>
+                R$ {(total / 100).toFixed(2).replace(".", ",")}
+              </Text>
             </View>
+            <TouchableOpacity onPress={handleCheckout} style={styles.button}>
+              <Text style={styles.buttonText}>FINALIZAR PEDIDO</Text>
+            </TouchableOpacity>
           </View>
         </>
       )}
