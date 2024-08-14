@@ -1,29 +1,33 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { View, Text, Image, TouchableOpacity, TextInput } from "react-native";
 import { CartContext } from "../../context/CartContext";
 import { styles } from "./styles";
 
-export default function ProductCard({ imageUrl, name, price }) {
-  const [quantity, setQuantity] = useState("1");
+export default function ProductCard({ id, imageUrl, name, price }) {
+  const [quantity, setQuantity] = useState(1);
 
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, updateQuantity } = useContext(CartContext);
 
   function handleAddToCart() {
-    const numericQuantity = parseInt(quantity);
-    if (numericQuantity >= 1 && numericQuantity <= 10) {
-      addToCart({ imageUrl, name, price, quantity: numericQuantity });
+    if (quantity >= 1 && quantity <= 10) {
+      addToCart({ id, name, price, imageUrl }, quantity);
     }
   }
 
   function handleQuantityChange(value) {
-    const numericValue = value.replace(/[^0-9]/g, "");
-    if (
-      numericValue === "" ||
-      (parseInt(numericValue) >= 1 && parseInt(numericValue) <= 10)
-    ) {
-      setQuantity(numericValue);
+    const parsedValue = parseInt(value);
+    if (!isNaN(parsedValue) && parsedValue >= 1 && parsedValue <= 10) {
+      setQuantity(parsedValue);
+    } else if (value === "") {
+      setQuantity("");
     }
   }
+
+  useEffect(() => {
+    if (quantity >= 1 && quantity <= 10) {
+      updateQuantity(id, quantity);
+    }
+  }, [quantity]);
 
   return (
     <View style={styles.container}>
@@ -39,7 +43,7 @@ export default function ProductCard({ imageUrl, name, price }) {
         <TouchableOpacity style={styles.quantityButton}>
           <TextInput
             style={styles.quantityInput}
-            value={quantity}
+            value={quantity.toString()}
             onChangeText={handleQuantityChange}
             keyboardType="numeric"
           />

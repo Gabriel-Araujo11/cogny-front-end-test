@@ -24,9 +24,11 @@ export const styles = StyleSheet.create({
   productName: {
     fontSize: 14,
     textAlign: "left",
+    color: "black",
   },
   productPrice: {
     fontWeight: "bold",
+    color: "black",
     fontSize: 16,
     textAlign: "left",
   },

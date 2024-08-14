@@ -7,8 +7,9 @@ import { CartContext } from "../../context/CartContext";
 
 export default function Header() {
   const navigation = useNavigation();
-  const { cartItemsCount } = useContext(CartContext);
-  const { resetCart } = useContext(CartContext);
+  const { resetCart, cartItems } = useContext(CartContext);
+
+  const totalQuantity = cartItems.reduce((acc, curr) => acc + curr.quantity, 0);
 
   function handleToCart() {
     navigation.navigate("Cart");
@@ -35,9 +36,9 @@ export default function Header() {
         <View style={styles.cartContainer}>
           <TouchableOpacity onPress={handleToCart}>
             <Image source={require("../../assets/shopping_icon.png")} />
-            {cartItemsCount > 0 && (
+            {totalQuantity > 0 && (
               <View style={styles.cartBadge}>
-                <Text style={styles.cartBadgeText}>{cartItemsCount}</Text>
+                <Text style={styles.cartBadgeText}>{totalQuantity}</Text>
               </View>
             )}
           </TouchableOpacity>
