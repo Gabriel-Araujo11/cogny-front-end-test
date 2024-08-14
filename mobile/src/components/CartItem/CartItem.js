@@ -17,7 +17,7 @@ export default function CartItem() {
                 style={styles.image}
                 resizeMode="contain"
               />
-              <View style={styles.textContainer}>
+              <View>
                 <Text style={styles.productName}>{item.product.name}</Text>
                 <Text style={styles.productPrice}>
                   R${(item.product.price / 100).toFixed(2).replace(".", ",")}
