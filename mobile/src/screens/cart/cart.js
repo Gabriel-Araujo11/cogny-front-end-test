@@ -1,7 +1,7 @@
 import React from "react";
 import { View, ScrollView } from "react-native";
 import Header from "../../components/Header/Header";
-import CartList from "../../components/CartList/CartList";
+import CartSummary from "../../components/CartSummary/CartSummary";
 
 export default function Cart() {
   return (
@@ -9,13 +9,7 @@ export default function Cart() {
       <Header />
       <ScrollView>
         {/*TEST DEVELOPMENT*/}
-        <CartList />
-        <CartList />
-        <CartList />
-        <CartList />
-        <CartList />
-        <CartList />
-        <CartList />
+        <CartSummary />
       </ScrollView>
     </View>
   );
