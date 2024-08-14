@@ -1,11 +1,10 @@
 import React, { useState, useContext } from "react";
 import { View, Text, Image, TouchableOpacity, TextInput } from "react-native";
-import ProductList from "../ProductList/ProductList";
 import { CartContext } from "../../context/CartContext";
 import { styles } from "./styles";
 
-export default function ProductCard(product) {
-  const [quantity, setQuantity] = useState(1);
+export default function ProductCard({ imageUrl, name, price }) {
+  const [quantity, setQuantity] = useState("1");
 
   const { addToCart } = useContext(CartContext);
 
@@ -29,14 +28,12 @@ export default function ProductCard(product) {
   return (
     <View style={styles.container}>
       <Image
-        source={{
-          uri: "product.imageUrl",
-        }}
+        source={{ uri: imageUrl }}
         overflow="hidden"
         style={styles.image}
       />
-      <Text style={styles.productName}>{product.name}</Text>
-      <Text style={styles.productPrice}>product.price</Text>
+      <Text style={styles.productName}>{name}</Text>
+      <Text style={styles.productPrice}>{price}</Text>
 
       <View style={styles.flexContainer}>
         <TouchableOpacity style={styles.quantityButton}>
@@ -51,7 +48,6 @@ export default function ProductCard(product) {
           <Text style={styles.buttonText}>ADICIONAR</Text>
         </TouchableOpacity>
       </View>
-      <ProductList />
     </View>
   );
 }
