@@ -5,9 +5,14 @@ import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
 import CartItem from "../../components/CartItem/CartItem";
 
-export default function CartSummary({ total }) {
-  const { resetCart } = useContext(CartContext);
+export default function CartSummary() {
+  const { cartItems, resetCart } = useContext(CartContext);
   const navigation = useNavigation();
+
+  const total = cartItems.reduce(
+    (acc, item) => acc + item.product.price * item.quantity,
+    0
+  );
 
   function handleCheckout() {
     if (total === 0) {
@@ -23,10 +28,10 @@ export default function CartSummary({ total }) {
 
   return (
     <View style={styles.container}>
-      {total === 0 ? (
+      {cartItems.length === 0 ? (
         <View>
           <Text style={styles.emptyCartText}>O Carrinho está vazio.</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Products")}>
             <View style={[styles.button, styles.backButton]}>
               <Text style={styles.buttonText}>VOLTAR</Text>
             </View>
@@ -34,18 +39,24 @@ export default function CartSummary({ total }) {
         </View>
       ) : (
         <>
-          <CartItem />
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.product.id}
+              id={item.product.id}
+              imageUrl={item.product.imageUrl}
+              name={item.product.name}
+              price={item.product.price}
+            />
+          ))}
           <View style={styles.footer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleCheckout}>
               <View style={[styles.button, styles.checkoutButton]}>
-                <Text style={styles.buttonText} onPress={handleCheckout}>
-                  FINALIZAR PEDIDO
-                </Text>
+                <Text style={styles.buttonText}>FINALIZAR PEDIDO</Text>
               </View>
             </TouchableOpacity>
             <View style={styles.totalContainer}>
               <Text style={styles.totalLabel}>TOTAL:</Text>
-              <Text style={styles.totalValue}>R$ {total}</Text>
+              <Text style={styles.totalValue}>R$ {total.toFixed(2)}</Text>
             </View>
           </View>
         </>
