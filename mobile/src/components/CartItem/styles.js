@@ -1,14 +1,8 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderRadius: 10,
-    marginTop: 10,
-    marginLeft: 20,
-    marginRight: 20,
-    padding: 20,
-    backgroundColor: "white",
+  cartContainer: {
+    margin: 20,
   },
   itemContainer: {
     flexDirection: "row",
@@ -18,26 +12,39 @@ export const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  textContainer: {
-    marginLeft: 16,
-  },
   productName: {
     fontSize: 14,
-    textAlign: "left",
+    left: 10,
     color: "black",
+    width: 170,
   },
   productPrice: {
     fontWeight: "bold",
     color: "black",
     fontSize: 16,
-    textAlign: "left",
+    left: 10,
+  },
+  totalPriceContainer: {
+    backgroundColor: "#EEEEEE",
+    borderRadius: 5,
   },
   totalPrice: {
-    backgroundColor: "#EEEEEE",
-    padding: 10,
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "right",
-    marginTop: 16,
+    top: 15,
+    right: 20,
+  },
+  totalQuantity: {
+    bottom: 10,
+    left: 40,
+    textAlign: "left",
+    borderWidth: 1,
+    borderColor: "black",
+    backgroundColor: "white",
+    padding: 5,
+    borderRadius: 4,
+    width: 40,
+    textAlign: "center",
   },
 });

@@ -39,15 +39,7 @@ export default function CartSummary() {
         </View>
       ) : (
         <>
-          {cartItems.map((item) => (
-            <CartItem
-              key={item.product.id}
-              id={item.product.id}
-              imageUrl={item.product.imageUrl}
-              name={item.product.name}
-              price={item.product.price}
-            />
-          ))}
+          <CartItem />
           <View style={styles.footer}>
             <TouchableOpacity onPress={handleCheckout}>
               <View style={[styles.button, styles.checkoutButton]}>

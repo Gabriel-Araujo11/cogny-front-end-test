@@ -9,30 +9,27 @@ export default function CartItem() {
   return (
     <ScrollView>
       <View style={styles.cartContainer}>
-        {cartItems.length === 0 ? (
-          <Text style={styles.emptyCartText}>O carrinho está vazio.</Text>
-        ) : (
-          cartItems.map((item) => (
-            <View key={item.product.id} style={styles.container}>
-              <View style={styles.itemContainer}>
-                <Image
-                  source={{ uri: item.product.imageUrl }}
-                  style={styles.image}
-                  resizeMode="contain"
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.productName}>{item.product.name}</Text>
-                  <Text style={styles.productPrice}>
-                    R${item.product.price} x {item.quantity}
-                  </Text>
-                </View>
+        {cartItems.map((item) => (
+          <>
+            <View key={item.product.id} style={styles.itemContainer}>
+              <Image
+                source={{ uri: item.product.imageUrl }}
+                style={styles.image}
+                resizeMode="contain"
+              />
+              <View style={styles.textContainer}>
+                <Text style={styles.productName}>{item.product.name}</Text>
+                <Text style={styles.productPrice}>R${item.product.price}</Text>
               </View>
+            </View>
+            <View style={styles.totalPriceContainer}>
               <Text style={styles.totalPrice}>
                 R$ {item.product.price * item.quantity}
               </Text>
+              <Text style={styles.totalQuantity}>{item.quantity}</Text>
             </View>
-          ))
-        )}
+          </>
+        ))}
       </View>
     </ScrollView>
   );

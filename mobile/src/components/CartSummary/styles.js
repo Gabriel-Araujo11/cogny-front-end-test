@@ -3,9 +3,10 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     marginTop: 16,
-    padding: 16,
     borderWidth: 1,
     borderRadius: 8,
+    marginLeft: 20,
+    marginRight: 20,
     borderColor: "#ddd",
     backgroundColor: "white",
   },
