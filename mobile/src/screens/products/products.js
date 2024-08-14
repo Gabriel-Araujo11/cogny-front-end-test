@@ -1,16 +1,14 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import { View, ScrollView } from "react-native";
 import Header from "../../components/Header/Header";
+import ProductList from "../../components/ProductList/ProductList";
 
 export default function Products() {
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
       <Header />
       <ScrollView>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductList />
       </ScrollView>
     </View>
   );

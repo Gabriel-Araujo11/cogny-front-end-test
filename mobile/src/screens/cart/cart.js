@@ -8,7 +8,6 @@ export default function Cart() {
     <View style={{ flex: 1, backgroundColor: "black" }}>
       <Header />
       <ScrollView>
-        {/*TEST DEVELOPMENT*/}
         <CartSummary />
       </ScrollView>
     </View>

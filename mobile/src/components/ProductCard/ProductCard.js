@@ -4,8 +4,8 @@ import ProductList from "../ProductList/ProductList";
 import { CartContext } from "../../context/CartContext";
 import { styles } from "./styles";
 
-export default function ProductCard() {
-  const [quantity, setQuantity] = useState("1");
+export default function ProductCard(product) {
+  const [quantity, setQuantity] = useState(1);
 
   const { addToCart } = useContext(CartContext);
 
@@ -35,7 +35,7 @@ export default function ProductCard() {
         overflow="hidden"
         style={styles.image}
       />
-      <Text style={styles.productName}>product.name</Text>
+      <Text style={styles.productName}>{product.name}</Text>
       <Text style={styles.productPrice}>product.price</Text>
 
       <View style={styles.flexContainer}>
