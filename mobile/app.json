@@ -1,8 +1,12 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "cognyshoes",
+    "slug": "cognyshoes-mobile",
     "version": "1.0.0",
+    "icon": "src/assets/cognyshoes_logo.png",
+    "splash": {
+      "backgroundColor": "#000000"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
