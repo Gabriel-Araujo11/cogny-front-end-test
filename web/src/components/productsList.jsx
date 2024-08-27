@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SimpleGrid } from "@chakra-ui/react";
 import ProductsCard from "./productsCard";
 import { collection, getDocs } from "firebase/firestore/lite";
-import { db } from "../service/firebase";
+import { db } from "../services/firebase";
 
 export default function ProductList({ addToCart }) {
   const [quantity, setQuantity] = useState(1);
